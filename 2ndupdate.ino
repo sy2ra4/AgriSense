@@ -116,11 +116,8 @@ void loop() {
   bool anyZoneNeedsWater = needsWaterZ1 || needsWaterZ2 || needsWaterZ3;
 
   if (anyZoneNeedsWater) {
-    // 3a. Turn ON the Water Pump
-    digitalWrite(PUMP_RELAY_PIN, LOW); // Active-LOW relay
-    Serial.println(F("✅ PUMP ON: One or more areas require irrigation."));
-
-    // 3b. Control Zone Gates (Servos) - Multi-Zone Manifold Logic
+    
+    // 3a. Control Zone Gates (Servos) - Multi-Zone Manifold Logic
     
     // Zone 1 Gate Control
     if (needsWaterZ1 && !needsWaterZ2 && !needsWaterZ3) {
@@ -174,9 +171,13 @@ void loop() {
       servoZ2.write(180);
       Serial.println(F("🚪 Zone 1, 2 & 3 Gate OPENED (Moisture Low)."));
     }
-    
+
+    // 3b. Turn ON the Water Pump
+    digitalWrite(PUMP_RELAY_PIN, LOW); // Active-LOW relay
+    Serial.println(F("✅ PUMP ON: One or more areas require irrigation."));
+
     // Hold watering for a brief period before checking again (allows soil to absorb water)
-    delay(3000); 
+    delay(1500); 
 
   } else {
     // 3c. Turn OFF the Water Pump
