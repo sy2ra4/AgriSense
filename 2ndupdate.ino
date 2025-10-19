@@ -7,8 +7,8 @@
 
 // Soil Moisture Pins
 const int MOISTURE_PIN_Z1 = A0; // Zone 1 Sensor
-const int MOISTURE_PIN_Z2 = A1; // Zone 2 Sensor
-const int MOISTURE_PIN_Z3 = A2; // Zone 3 Sensor (Main Line/Area)
+const int MOISTURE_PIN_Z2 = A3; // Zone 2 Sensor
+const int MOISTURE_PIN_Z3 = A5; // Zone 3 Sensor (Main Line/Area)
 
 // Servo Pins
 const int SERVO_PIN_Z1 = 9;  // Zone 1 Gate (Servo 1)
@@ -22,7 +22,7 @@ const int DRY_VALUE = 800;  // Analog value for bone dry soil (high value)
 const int WET_VALUE = 300;  // Analog value for fully wet soil (low value)
 
 // Irrigation Thresholds
-const int IRRIGATION_THRESHOLD_PERCENT = 40; // Start watering if moisture < 40%
+const int IRRIGATION_THRESHOLD_PERCENT = 30; // Start watering if moisture < 40%
 
 // Servo Angles (Adjust based on your physical gate mechanism)
 // Servo 1 (Zone 1) opens by moving from 0 to 90 degrees
